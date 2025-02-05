@@ -27,6 +27,7 @@ int main()
     image_height = (image_height < 1) ? 1 : image_height;
 
     //world
+    
     hittable_list world;
 
     world.add(make_shared <sphere> (point3(0,0,-1), 0.5));
