@@ -104,8 +104,8 @@ private:
         hit_record rec;
 
         if (world.hit(r, interval(0.001, infinity), rec)){
-            vec3 direction = random_on_hemisphere(rec.normal);
-            return 0.5 * ray_color(ray(rec.p, direction), depth - 1 , world);
+            vec3 direction = rec.normal + random_unit_vector();
+            return 0.7 * ray_color(ray(rec.p, direction), depth - 1 , world);
         }
 
         vec3 unit_direction = unit_vector(r.direction());
